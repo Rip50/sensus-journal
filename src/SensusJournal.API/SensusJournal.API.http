@@ -1,0 +1,6 @@
+@SensusJournal.API_HostAddress = http://localhost:5089
+
+GET {{SensusJournal.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
