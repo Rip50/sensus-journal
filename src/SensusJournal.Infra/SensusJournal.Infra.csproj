@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SensusJournal.Application\SensusJournal.Application.csproj" />
+    <ProjectReference Include="..\SensusJournal.Core\SensusJournal.Core.csproj" />
+  </ItemGroup>
+
 </Project>
