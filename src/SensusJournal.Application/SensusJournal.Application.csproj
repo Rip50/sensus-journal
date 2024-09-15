@@ -1,31 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SensusJournal.Core\SensusJournal.Core.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\SensusJournal.Core\SensusJournal.Core.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UseCases\Diarys\Create\" />
-    <Folder Include="UseCases\Diarys\Get\" />
-    <Folder Include="UseCases\Diarys\Delete\" />
-    <Folder Include="UseCases\Diarys\Update\" />
-    <Folder Include="UseCases\Records\Create\" />
-    <Folder Include="UseCases\Records\Delete\" />
-    <Folder Include="UseCases\Records\Get\" />
-    <Folder Include="UseCases\Records\Update\" />
-    <Folder Include="UseCases\Users\Create\" />
-    <Folder Include="UseCases\Users\Login\" />
-    <Folder Include="UseCases\Users\Logout\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="UseCases\Diarys\Get\" />
+		<Folder Include="UseCases\Diarys\Delete\" />
+		<Folder Include="UseCases\Diarys\Update\" />
+		<Folder Include="UseCases\Records\Create\" />
+		<Folder Include="UseCases\Records\Delete\" />
+		<Folder Include="UseCases\Records\Get\" />
+		<Folder Include="UseCases\Records\Update\" />
+		<Folder Include="UseCases\Users\Create\" />
+		<Folder Include="UseCases\Users\Login\" />
+		<Folder Include="UseCases\Users\Logout\" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MediatR" Version="12.4.1" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="13.0.1" />
+		<PackageReference Include="MediatR" Version="12.4.1" />
+	</ItemGroup>
 
 </Project>

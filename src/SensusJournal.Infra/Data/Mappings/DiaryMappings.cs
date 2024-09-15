@@ -12,7 +12,7 @@ internal class DiaryMappings : IEntityTypeConfiguration<Diary>
 
         builder.HasMany(d => d.Records)
             .WithOne(d => d.Diary)
-            .HasForeignKey();
+            .HasForeignKey(r => r.DiaryId);
 
         builder.HasOne(d => d.User)
             .WithMany(u => u.Diarys);

@@ -3,6 +3,7 @@
 public class Record
 {
     public Guid Id { get; set; }
+    public Guid DiaryId { get; set; }
     public Diary Diary { get; set; }
     public string Summary { get; set; }
     public string Details { get; set; }

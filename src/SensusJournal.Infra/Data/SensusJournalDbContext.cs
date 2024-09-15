@@ -26,6 +26,8 @@ public sealed class SensusJournalDbContext : IdentityDbContext<ApplicationUser>,
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(SensusJournalDbContext).Assembly);
     }
 }

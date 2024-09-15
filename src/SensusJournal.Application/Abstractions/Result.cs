@@ -45,7 +45,7 @@ public class Result<TResponse> : Result where TResponse : class
 
     public static new Result<TResponse> Failure(string? error = null)
     {
-        return new Result<TResponse>(false);
+        return new Result<TResponse>(false, error);
     }
 
 }
