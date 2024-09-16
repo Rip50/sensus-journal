@@ -2,7 +2,7 @@
 
 namespace SensusJournal.Core.Entities;
 
-public class ApplicationUser : IdentityUser
+public class ApplicationUser : IdentityUser<Guid>
 {
     public string Name { get; set; }
 

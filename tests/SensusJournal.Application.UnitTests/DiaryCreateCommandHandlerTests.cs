@@ -16,7 +16,7 @@ public class DiaryCreateCommandHandlerTests
     {
         var config = new MapperConfiguration(cfg =>
         {
-            cfg.AddProfile<DiaryMappingProfile>();
+            cfg.AddProfile<DiaryCreateMappingProfile>();
         });
 
         _mapper = config.CreateMapper();

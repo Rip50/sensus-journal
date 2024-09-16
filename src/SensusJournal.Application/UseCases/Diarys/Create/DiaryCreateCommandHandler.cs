@@ -5,7 +5,8 @@ using SensusJournal.Core.Entities;
 
 namespace SensusJournal.Application.UseCases.Diarys.Create;
 
-public class DiaryCreateCommandHandler : ICommandHandler<DiaryCreateCommand, DiaryCreateResponse>
+public class DiaryCreateCommandHandler 
+    : ICommandHandler<DiaryCreateCommand, DiaryCreateResponse>
 {
     private readonly ISensusJournalDbContext _dbContext;
     private readonly IMapper _mapper;

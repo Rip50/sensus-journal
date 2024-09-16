@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SensusJournal.Application.UseCases.Diarys.Create;
+using SensusJournal.Application.UseCases.Diarys.Get;
+using SensusJournal.Application.UseCases.Diarys.GetById;
 
 namespace SensusJournal.API.Endpoints;
 
@@ -28,11 +30,28 @@ public static class DiarysEndpoints
 
     static async Task<IResult> GetAll(ISender sender)
     {
-        return TypedResults.Problem("Not implemented");
+        var result = await sender.Send(DiaryGetQuery.All);
+        if (result.IsSuccess)
+        {
+            return TypedResults.Ok(result.Response);
+        }
+
+        return TypedResults.Problem(result.Error);
     }
 
     static async Task<IResult> GetById([FromRoute]Guid id, ISender sender)
     {
-        return TypedResults.Problem("Not implemented");
+        var result = await sender.Send(new DiaryGetByIdQuery(id, null));
+        if (result.IsSuccess)
+        {
+            return TypedResults.Ok(result.Response);
+        }
+
+        if (result.ErrorType == Application.Abstractions.ErrorType.NotFound)
+        {
+            return TypedResults.NotFound(result.Error);
+        }
+
+        return TypedResults.Problem(result.Error);
     }
 }

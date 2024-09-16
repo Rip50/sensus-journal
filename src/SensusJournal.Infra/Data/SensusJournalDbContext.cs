@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SensusJournal.Application.Interfaces.Data;
 using SensusJournal.Core.Entities;
@@ -8,7 +9,7 @@ namespace SensusJournal.Infra.Data;
 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 #pragma warning disable CS8618
 
-public sealed class SensusJournalDbContext : IdentityDbContext<ApplicationUser>, ISensusJournalDbContext
+public sealed class SensusJournalDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>, ISensusJournalDbContext
 {
     public DbSet<Diary> Diarys { get; set; }
 
