@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SensusJournal.Application.Interfaces.Data;
 using SensusJournal.Infra.Data;
 
 namespace SensusJournal.Infra.Extensions;
@@ -26,12 +27,12 @@ public static class ServiceCollectionExtensions
         string? connectionString = configuration.GetConnectionString("SensusJournalDbContext");
         if (!string.IsNullOrEmpty(connectionString))
         {
-            services.AddDbContext<SensusJournalDbContext>(options =>
+            services.AddDbContext<ISensusJournalDbContext, SensusJournalDbContext>(options =>
                 options.UseNpgsql(connectionString));
         }
         else
         {
-            services.AddDbContext<SensusJournalDbContext>(options =>
+            services.AddDbContext<ISensusJournalDbContext, SensusJournalDbContext>(options =>
                 options.UseInMemoryDatabase("SensusJournal"));
         }
         

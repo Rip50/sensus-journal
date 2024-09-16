@@ -12,6 +12,6 @@ internal class CategoryMappings : IEntityTypeConfiguration<Category>
 
         builder.HasMany(c => c.Emotions)
             .WithOne(e => e.Category)
-            .HasForeignKey();
+            .HasForeignKey(e => e.CategoryId);
     }
 }
